@@ -8,13 +8,9 @@
  */
 void division(complex c1, complex c2, complex *c3)
 {
-	complex c4, c5, c6;
+	double a = c1.re, b = c1.im;
+	double c = c2.re, d = c2.im;
 
-	c4.re = c2.re;
-	c4.im = c2.im;
-	c4 = conjugate(c4);
-	multiplication(c2, c4, &c5);
-	multiplication(c1, c4, &c6);
-	c3->re = c6.re / c5.re;
-	c3->im = c6.im / c5.re;
+	c3->re = ((a * c) + (b * d)) / (pow(c, 2) + pow(d, 2));
+	c3->im = ((b * c) - (a * d)) / (pow(c, 2) + pow(d, 2));
 }
